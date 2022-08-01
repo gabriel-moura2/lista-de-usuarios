@@ -1,9 +1,11 @@
 import { CircularProgress, Container } from '@mui/material';
 import { useEffect, useState } from 'react'
 import { AppBarLabel, AppList } from '../components';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Task from './Task';
 
 function App() {
-  const [users, setUsers] = useState([{name: "gabriel"}]);
+  const [users, setUsers] = useState([{name: 'gabriel'}]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -12,14 +14,13 @@ function App() {
       .then(json => {
         setUsers(json)
         setLoading(false)
-      })
+    })
   })
 
   return (
     <Container>
       <AppBarLabel label='Lista de Usuários' button={false} />
-      {loading ? <CircularProgress/> : null }
-      <AppList items={users} />
+      {loading ? <CircularProgress/> : <AppList items={users} /> }
     </Container>
   );
 }

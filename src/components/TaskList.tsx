@@ -1,14 +1,13 @@
-import { Box, List, ListItem, ListItemButton, ListItemText } from "@mui/material"
-import { Link } from "react-router-dom";
+import { Box, List, ListItem, ListItemButton, ListItemText } from "@mui/material";
 
-const AppList = (props: {items: any[]} ) => {
+const TaskList = (props: {items: any[]} ) => {
     return (
         <Box>
             <List>
                 {props.items.map(item => (
                 <ListItem key={item.id}>
                     <ListItemButton>
-                        <Link to={`/user/${item.id}`}><ListItemText primary={item.name} /></Link>
+                        <ListItemText primary={item.title} />
                     </ListItemButton>
                 </ListItem>
                 ))}
@@ -17,4 +16,4 @@ const AppList = (props: {items: any[]} ) => {
     )
 }
 
-export default AppList
+export default TaskList;
