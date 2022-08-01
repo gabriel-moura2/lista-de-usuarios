@@ -1,6 +1,7 @@
 import { Box, IconButton, Toolbar, Typography } from "@mui/material";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import MenuIcon from '@mui/icons-material/Menu'
+import { Link } from "react-router-dom";
 
 
 const AppBarLabel = (props: { label: string; button: boolean; }) => {
@@ -8,9 +9,11 @@ const AppBarLabel = (props: { label: string; button: boolean; }) => {
       <Box>
         <Toolbar>
           {props.button ? (
-          <IconButton edge="start" aria-label="menu" sx={{ mr: 2 }}>
-            <ArrowBackIcon />
-          </IconButton>
+          <Link to="/" >
+            <IconButton edge="start" aria-label="menu" sx={{ mr: 2 }}>
+              <ArrowBackIcon />
+            </IconButton>
+          </Link>
           ) : (
           <IconButton edge="start" aria-label="menu" sx={{ mr: 2 }}>
             <MenuIcon />

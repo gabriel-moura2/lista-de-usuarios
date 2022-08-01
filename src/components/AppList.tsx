@@ -6,11 +6,13 @@ const AppList = (props: {items: any[]} ) => {
         <Box>
             <List>
                 {props.items.map(item => (
-                <ListItem key={item.id}>
-                    <ListItemButton>
-                        <Link to={`/user/${item.id}`}><ListItemText primary={item.name} /></Link>
-                    </ListItemButton>
-                </ListItem>
+                <Link to={`/user/${item.id}`}>
+                    <ListItem key={item.id}>
+                        <ListItemButton>
+                            <ListItemText primary={item.name} />
+                        </ListItemButton>
+                    </ListItem>
+                </Link>
                 ))}
             </List>
         </Box>

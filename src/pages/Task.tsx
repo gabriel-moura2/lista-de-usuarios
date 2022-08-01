@@ -19,7 +19,7 @@ const TaskPage = () => {
 
     return (
         <Container>
-            <AppBarLabel label='Lista de Usuários' button={true} />
+            <AppBarLabel label='Lista de Tarefas' button={true} />
             {loading ? <CircularProgress/> : <TaskList items={tasks} /> }
         </Container>
     )
