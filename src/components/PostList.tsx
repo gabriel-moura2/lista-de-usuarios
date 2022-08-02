@@ -1,11 +1,16 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Card, CardContent, Typography } from "@mui/material";
 
-const PostList = (props: { items: any[] }) => {
+const PostList = (props: {items: any[]}) => {
     return (
         <Box>
             {props.items.map((item) => {
-                <Typography variant="h2">{item.title}</Typography>
-            })}
+                <Card>
+                    <CardContent>
+                        <Typography variant="h2">{item.title}</Typography>
+                        <Typography paragraph>{item.body}</Typography>
+                    </CardContent>
+                </Card>
+            }))}
         </Box>
     )
 }

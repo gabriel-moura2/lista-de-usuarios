@@ -1,7 +1,7 @@
 import { CircularProgress, Container } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { AppBarLabel } from "../components";
+import { AppBarLabel, PostList } from "../components";
 
 const Post = () => {
     const [posts, setPosts] = useState([])
@@ -27,7 +27,7 @@ const Post = () => {
 
     return (
         <Container>
-            <AppBarLabel label={user} button={false} />
+            <AppBarLabel label={user} button={true} />
             {loading ? <CircularProgress/> : <PostList items={posts} /> }
         </Container>
     )
