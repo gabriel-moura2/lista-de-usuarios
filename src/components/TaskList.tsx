@@ -5,7 +5,7 @@ const TaskList = (props: {items: any[]} ) => {
         <Box>
             <FormGroup>
                 {props.items.map(item => (
-                    <FormControlLabel control={item.completed ? <Checkbox defaultChecked/> : <Checkbox />} label={item.title} />
+                    <FormControlLabel key={item.id} control={item.completed ? <Checkbox defaultChecked/> : <Checkbox />} label={item.title} />
                 ))}
             </FormGroup>
         </Box>

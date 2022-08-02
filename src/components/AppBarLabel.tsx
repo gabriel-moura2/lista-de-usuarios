@@ -2,7 +2,7 @@ import { Box, IconButton, Toolbar, Typography } from "@mui/material";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import MenuIcon from '@mui/icons-material/Menu'
 import { Link } from "react-router-dom";
-import LocalPostOfficeIcon from '@mui/icons-material/LocalPostOffice';
+import CommentIcon from '@mui/icons-material/Comment';
 
 
 const AppBarLabel = (props: { label: string; button: boolean; }) => {
@@ -26,7 +26,7 @@ const AppBarLabel = (props: { label: string; button: boolean; }) => {
           {props.button ? (
           <Link to="/" >
             <IconButton edge="start" aria-label="menu" sx={{ mr: 2 }}>
-              <LocalPostOfficeIcon />
+              <CommentIcon />
             </IconButton>
           </Link>
           ) : null}

@@ -4,10 +4,10 @@ import { useParams } from "react-router-dom";
 import { AppBarLabel, TaskList } from "../components";
 
 const TaskPage = () => {
-    const [tasks, setTasks] = useState([])
-    const [loading, setLoading] = useState(true)
-    const [user, setUser] = useState('');
-    const params = useParams()
+    const [tasks, setTasks] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [user, setUser] = useState('Lista de Tarefas');
+    const params = useParams();
 
     useEffect(() => {
         fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}/todos`)
@@ -16,14 +16,12 @@ const TaskPage = () => {
             setTasks(json);
             setLoading(false);
         })
-    })
+    });
 
     useEffect(() => {
         fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`)
         .then(resposta => resposta.json())
-        .then(json => {
-            setUser(json.name);
-        })
+        .then(json => { setUser(json.name); })
     })
 
     return (
