@@ -1,7 +1,8 @@
-import { CircularProgress, Container } from "@mui/material";
+import { CircularProgress, Container, IconButton } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { AppBarLabel, TaskList } from "../components";
+import CommentIcon from '@mui/icons-material/Comment';
 
 const TaskPage = () => {
     const [tasks, setTasks] = useState([]);
@@ -24,9 +25,15 @@ const TaskPage = () => {
         .then(json => { setUser(json.name); })
     })
 
+    const button = (
+        <IconButton>
+            <CommentIcon />
+        </IconButton>
+    )
+
     return (
         <Container>
-            <AppBarLabel label={user} button={true} />
+            <AppBarLabel label={user} button={button} />
             {loading ? <CircularProgress/> : <TaskList items={tasks} /> }
         </Container>
     )

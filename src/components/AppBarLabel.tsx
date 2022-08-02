@@ -1,11 +1,10 @@
-import { AppBar, Box, IconButton, Toolbar, Typography } from "@mui/material";
+import { Box, IconButton, Toolbar, Typography } from "@mui/material";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import MenuIcon from '@mui/icons-material/Menu'
 import { Link } from "react-router-dom";
-import CommentIcon from '@mui/icons-material/Comment';
+import ListAltIcon from '@mui/icons-material/ListAlt';
 
 
-const AppBarLabel = (props: { label: string; button: boolean; }) => {
+const AppBarLabel = (props: { label: string; button: any; }) => {
     return (
       <Box>
         <Toolbar>
@@ -15,21 +14,11 @@ const AppBarLabel = (props: { label: string; button: boolean; }) => {
               <ArrowBackIcon />
             </IconButton>
           </Link>
-          ) : (
-          <IconButton edge="start" aria-label="menu" sx={{ mr: 2 }}>
-            <MenuIcon />
-          </IconButton>
-          )}
-          <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
+          ) : null}
+          <Typography variant="h5" noWrap component="div" sx={{ flexGrow: 1 }}>
             {props.label}
           </Typography>
-          {props.button ? (
-          <Link to="/" >
-            <IconButton edge="start" aria-label="menu" sx={{ mr: 2 }}>
-              <CommentIcon />
-            </IconButton>
-          </Link>
-          ) : null}
+          {props.button}
         </Toolbar>
       </Box>
     );
