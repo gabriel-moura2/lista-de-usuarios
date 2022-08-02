@@ -1,13 +1,20 @@
-import { Box, Checkbox, FormControlLabel, FormGroup } from "@mui/material";
+import { Box, Checkbox, FormControlLabel, FormGroup, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
 
 const TaskList = (props: {items: any[]} ) => {
     return (
         <Box>
-            <FormGroup>
+            <List>
                 {props.items.map(item => (
-                    <FormControlLabel key={item.id} control={item.completed ? <Checkbox defaultChecked/> : <Checkbox />} label={item.title} />
+                    <ListItem key={item.id}>
+                        <ListItemButton>
+                            <ListItemIcon>
+                                {item.completed ? <Checkbox defaultChecked/> : <Checkbox />}
+                            </ListItemIcon>
+                            <ListItemText primary={item.title} />
+                        </ListItemButton>
+                    </ListItem>
                 ))}
-            </FormGroup>
+            </List>
         </Box>
     )
 }

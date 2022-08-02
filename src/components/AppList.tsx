@@ -1,18 +1,32 @@
-import { Box, List, ListItem, ListItemButton, ListItemText } from "@mui/material"
+import { Box, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material"
 import { Link } from "react-router-dom";
+import CommentIcon from '@mui/icons-material/Comment';
+import ListAltIcon from '@mui/icons-material/ListAlt';
 
 const AppList = (props: {items: any[]} ) => {
     return (
         <Box>
             <List>
                 {props.items.map(item => (
-                <Link to={`/user/${item.id}/tasks`}>
                     <ListItem key={item.id}>
                         <ListItemButton>
                             <ListItemText primary={item.name} />
+                            <ListItemIcon>
+                                <Link to={`/user/${item.id}/tasks`}>
+                                    <IconButton>
+                                        <ListAltIcon />
+                                    </IconButton>
+                                </Link>
+                            </ListItemIcon>
+                            <ListItemIcon>
+                                <Link to={`/user/${item.id}/posts`}>
+                                    <IconButton>
+                                        <CommentIcon />
+                                    </IconButton>
+                                </Link>
+                            </ListItemIcon>
                         </ListItemButton>
                     </ListItem>
-                </Link>
                 ))}
             </List>
         </Box>
