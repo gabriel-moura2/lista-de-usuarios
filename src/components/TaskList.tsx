@@ -1,4 +1,4 @@
-import { Box, Checkbox, FormControlLabel, FormGroup, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
+import { Box, Checkbox, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
 
 const TaskList = (props: {items: any[]} ) => {
     return (
@@ -8,7 +8,7 @@ const TaskList = (props: {items: any[]} ) => {
                     <ListItem key={item.id}>
                         <ListItemButton>
                             <ListItemIcon>
-                                {item.completed ? <Checkbox defaultChecked/> : <Checkbox />}
+                                <Checkbox checked={item.completed} />
                             </ListItemIcon>
                             <ListItemText primary={item.title} />
                         </ListItemButton>

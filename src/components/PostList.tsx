@@ -1,17 +1,19 @@
-import { Box, Card, CardContent, Typography } from "@mui/material";
+import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
 
 const PostList = (props: {items: any[]}) => {
     return (
-        <Box>
+        <Grid container spacing={4}>
             {props.items.map(item => (
-                <Card key={item.id}>
-                    <CardContent>
-                        <Typography variant="h2">{item.title}</Typography>
-                        <Typography paragraph>{item.body}</Typography>
-                    </CardContent>
-                </Card>
+                <Grid item key={item.id} md={6}>
+                    <Card >
+                        <CardContent>
+                            <Typography variant="h5">{item.title}</Typography>
+                            <Typography paragraph>{item.body}</Typography>
+                        </CardContent>
+                    </Card>
+                </Grid>
             ))}
-        </Box>
+        </Grid>
     )
 }
 
