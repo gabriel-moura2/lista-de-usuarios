@@ -2,7 +2,6 @@ import { CircularProgress, Container, IconButton } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { AppBarLabel, TaskList } from "../components";
-import CommentIcon from '@mui/icons-material/Comment';
 
 const TaskPage = () => {
     const [tasks, setTasks] = useState([]);
@@ -22,18 +21,12 @@ const TaskPage = () => {
     useEffect(() => {
         fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`)
         .then(resposta => resposta.json())
-        .then(json => { setUser(json.name); })
+        .then(json => { setUser(json); })
     })
-
-    const button = (
-        <IconButton>
-            <CommentIcon />
-        </IconButton>
-    )
 
     return (
         <Container>
-            <AppBarLabel label={user} button={button} />
+            <AppBarLabel label={user} arrow post />
             {loading ? <CircularProgress/> : <TaskList items={tasks} /> }
         </Container>
     )

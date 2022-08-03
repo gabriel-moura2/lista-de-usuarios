@@ -13,7 +13,7 @@ const Post = () => {
     useEffect(() => {
         fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`)
         .then(resposta => resposta.json())
-        .then(json => { setUser(json.name); })
+        .then(json => { setUser(json); })
     })
 
     useEffect(() => {
@@ -27,7 +27,7 @@ const Post = () => {
 
     return (
         <Container>
-            <AppBarLabel label={user} button={true} />
+            <AppBarLabel label={user} arrow task />
             {loading ? <CircularProgress/> : <PostList items={posts} /> }
         </Container>
     )

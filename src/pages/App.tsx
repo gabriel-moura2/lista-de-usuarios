@@ -19,7 +19,7 @@ function App() {
 
   return (
     <Container>
-      <AppBarLabel label='Lista de Usuários' button={false} />
+      <AppBarLabel label={{name: 'Lista de Usuários'}} />
       {loading ? <CircularProgress/> : <AppList items={users} /> }
     </Container>
   );
