@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
+import { Box, Button, Card, CardActions, CardContent, Grid, Typography } from "@mui/material";
 
 const PostList = (props: {items: any[]}) => {
     return (
@@ -8,9 +8,12 @@ const PostList = (props: {items: any[]}) => {
                     <Grid item key={item.id} md={6}>
                         <Card >
                             <CardContent>
-                                <Typography variant="h5">{item.title}</Typography>
-                                <Typography paragraph>{item.body}</Typography>
+                                <Typography gutterBottom variant="h5" component="div">{item.title}</Typography>
+                                <Typography variant="body2" color="text.secondary">{item.body}</Typography>
                             </CardContent>
+                            <CardActions>
+                                <Button size="small">Comments</Button>
+                            </CardActions>
                         </Card>
                     </Grid>
                 ))}

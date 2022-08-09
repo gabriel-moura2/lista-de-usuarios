@@ -1,8 +1,6 @@
 import { CircularProgress, Container } from '@mui/material';
 import { useEffect, useState } from 'react'
 import { AppBarLabel, AppList } from '../components';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Task from './Task';
 
 function App() {
   const [users, setUsers] = useState([{name: 'gabriel'}]);
