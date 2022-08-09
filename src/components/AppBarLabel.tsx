@@ -1,4 +1,4 @@
-import { Box, IconButton, Toolbar, Typography } from "@mui/material";
+import { Box, Button, IconButton, Toolbar, Typography } from "@mui/material";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom";
 import ListAltIcon from '@mui/icons-material/ListAlt';
@@ -39,6 +39,8 @@ const AppBarLabel = (props: any) => {
           </Typography>
           {props.post ? postIcon : null}
           {props.task ? taskIcon : null}
+          <Button>Login</Button>
+          <Button>Logout</Button>
         </Toolbar>
       </Box>
     );
