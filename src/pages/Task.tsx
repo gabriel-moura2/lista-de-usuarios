@@ -25,7 +25,7 @@ const TaskPage = () => {
     })
 
     return (
-        <Container>
+        <Container component="main" maxWidth="xs">
             <AppBarLabel label={user} arrow post />
             {loading ? <CircularProgress/> : <TaskList items={tasks} /> }
         </Container>
