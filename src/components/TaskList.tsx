@@ -2,7 +2,7 @@ import { Box, Checkbox, List, ListItem, ListItemButton, ListItemIcon, ListItemTe
 
 const TaskList = (props: {items: any[]} ) => {
     return (
-        <Box>
+        <Box sx={{marginTop: 8}}>
             <List>
                 {props.items.map(item => (
                     <ListItem key={item.id}>

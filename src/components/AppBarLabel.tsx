@@ -1,4 +1,4 @@
-import { Box, Button, IconButton, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Button, IconButton, Toolbar, Typography } from "@mui/material";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom";
 import ListAltIcon from '@mui/icons-material/ListAlt';
@@ -32,16 +32,18 @@ const AppBarLabel = (props: any) => {
 
     return (
       <Box>
-        <Toolbar>
-          {props.arrow ? arrowIcon : null}
-          <Typography variant="h5" noWrap component="div" sx={{ flexGrow: 1 }}>
-            {props.label.name}
-          </Typography>
-          {props.post ? postIcon : null}
-          {props.task ? taskIcon : null}
-          <Button href="/login">Login</Button>
-          <Button href="/logout">Logout</Button>
-        </Toolbar>
+        <AppBar>
+          <Toolbar>
+            {props.arrow ? arrowIcon : null}
+            <Typography variant="h5" noWrap component="div" sx={{ flexGrow: 1 }}>
+              {props.label.name}
+            </Typography>
+            {props.post ? postIcon : null}
+            {props.task ? taskIcon : null}
+            <Button href="/login" color="inherit">Login</Button>
+            <Button href="/logout" color="inherit">Logout</Button>
+          </Toolbar>
+        </AppBar>
       </Box>
     );
   }

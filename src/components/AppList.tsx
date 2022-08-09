@@ -5,7 +5,7 @@ import ListAltIcon from '@mui/icons-material/ListAlt';
 
 const AppList = (props: {items: any[]} ) => {
     return (
-        <Box>
+        <Box sx={{marginTop: 8}}>
             <List>
                 {props.items.map(item => (
                     <ListItem key={item.id}>
