@@ -39,8 +39,8 @@ const AppBarLabel = (props: any) => {
           </Typography>
           {props.post ? postIcon : null}
           {props.task ? taskIcon : null}
-          <Button>Login</Button>
-          <Button>Logout</Button>
+          <Button href="/login">Login</Button>
+          <Button href="/logout">Logout</Button>
         </Toolbar>
       </Box>
     );
