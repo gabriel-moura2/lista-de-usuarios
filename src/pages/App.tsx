@@ -16,7 +16,7 @@ function App() {
   })
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="sm">
       <AppBarLabel label={{name: 'Lista de Usuários'}} />
       {loading ? <CircularProgress/> : <AppList items={users} /> }
     </Container>

@@ -6,6 +6,7 @@ import { AppBarLabel, TaskList } from "../components";
 const TaskPage = () => {
     const [tasks, setTasks] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [navLoading, setNavLoading] = useState(true);
     const [user, setUser] = useState('Lista de Tarefas');
     const params = useParams();
 
@@ -21,12 +22,15 @@ const TaskPage = () => {
     useEffect(() => {
         fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`)
         .then(resposta => resposta.json())
-        .then(json => { setUser(json); })
+        .then(json => { 
+            setUser(json); 
+            setNavLoading(false);
+        })
     })
 
     return (
         <Container component="main" maxWidth="xs">
-            <AppBarLabel label={user} arrow post />
+            {navLoading ? <CircularProgress/> : <AppBarLabel label={user} arrow post /> }
             {loading ? <CircularProgress/> : <TaskList items={tasks} /> }
         </Container>
     )

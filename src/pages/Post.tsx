@@ -4,8 +4,9 @@ import { useParams } from "react-router-dom";
 import { AppBarLabel, PostList } from "../components";
 
 const Post = () => {
-    const [posts, setPosts] = useState([])
-    const [loading, setLoading] = useState(true)
+    const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [navLoading, setNavLoading] = useState(true);
     const [user, setUser] = useState('Lista de Comentários');
 
     const params = useParams();
@@ -13,7 +14,10 @@ const Post = () => {
     useEffect(() => {
         fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`)
         .then(resposta => resposta.json())
-        .then(json => { setUser(json); })
+        .then(json => { 
+            setUser(json); 
+            setNavLoading(false);
+        })
     })
 
     useEffect(() => {
@@ -27,7 +31,7 @@ const Post = () => {
 
     return (
         <Container>
-            <AppBarLabel label={user} arrow task />
+            {navLoading ? <CircularProgress/> : <AppBarLabel label={user} arrow task />  }
             {loading ? <CircularProgress/> : <PostList items={posts} /> }
         </Container>
     )
