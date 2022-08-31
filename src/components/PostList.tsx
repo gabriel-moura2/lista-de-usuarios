@@ -12,7 +12,7 @@ const PostList = (props: {items: any[]}) => {
                                 <Typography variant="body2" color="text.secondary">{item.body}</Typography>
                             </CardContent>
                             <CardActions>
-                                <Button size="small">Comments</Button>
+                                <Button size="small">Comentários</Button>
                             </CardActions>
                         </Card>
                     </Grid>

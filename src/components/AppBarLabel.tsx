@@ -40,8 +40,8 @@ const AppBarLabel = (props: any) => {
             </Typography>
             {props.post ? postIcon : null}
             {props.task ? taskIcon : null}
-            <Button href="/login" color="inherit">Login</Button>
-            <Button href="/logout" color="inherit">Logout</Button>
+            <Button href="/login" color="inherit">Entrar</Button>
+            <Button href="/signin" color="inherit">Cadastra-se</Button>
           </Toolbar>
         </AppBar>
       </Box>
