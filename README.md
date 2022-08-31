@@ -18,3 +18,5 @@ depois, execute o servidor
 ```bash
 pnpm run dev
 ```
+
+Abra [http://localhost:5173/](http://localhost:5173/) para ver o resultado
