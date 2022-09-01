@@ -32,7 +32,7 @@ const AppBarLabel = (props: any) => {
 
     return (
       <Box>
-        <AppBar>
+        <AppBar position="static">
           <Toolbar>
             {props.arrow ? arrowIcon : null}
             <Typography variant="h5" noWrap component="div" sx={{ flexGrow: 1 }}>

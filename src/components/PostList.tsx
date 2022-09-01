@@ -6,13 +6,13 @@ const PostList = (props: {items: any[]}) => {
             <Grid container spacing={6}>
                 {props.items.map(item => (
                     <Grid item key={item.id} md={6}>
-                        <Card >
+                        <Card>
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="div">{item.title}</Typography>
                                 <Typography variant="body2" color="text.secondary">{item.body}</Typography>
                             </CardContent>
                             <CardActions>
-                                <Button size="small">Comentários</Button>
+                                <Button href={`/user/${item.userId}/post/${item.id}/comments`} size="small">Comentários</Button>
                             </CardActions>
                         </Card>
                     </Grid>
